@@ -3,7 +3,7 @@ import {
     getRecipes, 
     saveRecipes, 
     sortRecipes, 
-    filterStatus, 
+    filterState, 
     filterSearch, 
     filterRecipes, 
     updateRecipe,
@@ -99,7 +99,7 @@ const renderRecipes = () => {
 
     const filters = getFilters()
     const recipes = sortRecipes(filters.sortBy)
-    const recipesByStatus = filterStatus(filters.filterStatus, recipes)
+    const recipesByStatus = filterState(filters.filterState, recipes)
     const filteredRecipes = filterSearch(filters.filterSearch, recipesByStatus)
 
     const archived = recipes.filter((recipe) => recipe.archived).length

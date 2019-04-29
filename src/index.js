@@ -22,7 +22,7 @@ document.querySelector('#filter-by').addEventListener('change', (e) => {
 
 document.querySelector('#filter-status').addEventListener('change', (e) => {
     setFilters({
-        filterStatus: e.target.value
+        filterState: e.target.value
     }) 
     renderRecipes()
 })
@@ -33,6 +33,7 @@ document.querySelector('#add-recipe').addEventListener('click', (e) => {
 })
 
 window.addEventListener('storage', (e) => {
+    // When local storage changes, render recipes.
     if (e.key === 'recipes') {
         renderRecipes()
     }

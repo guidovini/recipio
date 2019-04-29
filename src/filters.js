@@ -1,7 +1,7 @@
 const filters = {
     filterSearch: '',
     sortBy: 'byEdited',
-    filterStatus: 'byAll',
+    filterState: 'byAll',
 }
 
 const getFilters = () => filters
@@ -11,8 +11,8 @@ const setFilters = (updates) => {
         filters.sortBy = updates.sortBy
     }
 
-    if (typeof updates.filterStatus === 'string') {
-        filters.filterStatus = updates.filterStatus
+    if (typeof updates.filterState === 'string') {
+        filters.filterState = updates.filterState
     }
 
     if (typeof updates.filterSearch === 'string') {
