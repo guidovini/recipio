@@ -45,8 +45,7 @@ const updateRecipe = (id, updates) => {
     if (!recipe) {
         return
     }
-
-    console.log(updates)
+    // console.log(updates)
     
     if (typeof updates.fav === 'boolean') {
         recipe.fav = updates.fav
@@ -73,7 +72,7 @@ const updateRecipe = (id, updates) => {
         recipe.updatedAt = moment().valueOf()
     }
 
-    if (updates.ingredients !== undefined ) {
+    if (updates.ingredients !== undefined) {
         recipe.ingredients.push({
             ingredientId: updates.ingredients.ingredientId,
             ingredient: updates.ingredients.ingredient,
@@ -134,17 +133,35 @@ const deleteRecipe = (id) => {
 
 const sortRecipes = (sortBy) => {
     if (sortBy === 'byCreated') {
-        return recipes.sort((a,b) => a.createdAt < b.createdAt )
+        return recipes.sort((a, b) => {
+            if (a.createdAt > b.createdAt)
+                return -1
+            if (a.createdAt < b.createdAt)
+                return 1
+            return 0
+        })
     } else if (sortBy === 'alphabetically') {
-        return recipes.sort((a,b) => a.title > b.title) 
-    } else if (sortBy === 'byEdited'){
-        return recipes.sort((a,b) => a.updatedAt < b.updatedAt)
+        return recipes.sort((a, b) => {
+            if (a.title > b.title)
+                return 1
+            if (a.title < b.title)
+                return -1
+            return 0
+        })
+    } else if (sortBy === 'byEdited') {
+        return recipes.sort((a, b) => {
+            if (a.updatedAt > b.updatedAt)
+                return -1
+            if (a.updatedAt < b.updatedAt)
+                return 1
+            return 0
+        })
     } else {
         return recipes
     }
 }
 
-const filterStatus = (filter, recipes) => {
+const filterState = (filter, recipes) => {
     if (filter === 'byFavorited') {
         return recipes.filter((recipe) => recipe.fav)
     } else if (filter === 'byArchived') {
@@ -173,7 +190,7 @@ export {
     saveRecipes, 
     deleteRecipe, 
     sortRecipes, 
-    filterStatus, 
+    filterState, 
     filterSearch, 
     updateStep, 
     updateIngredient 
