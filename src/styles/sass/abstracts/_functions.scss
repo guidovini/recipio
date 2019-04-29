@@ -1,0 +1,19 @@
+@function app-color($key: 'primary') {
+    @return map-get($app-colors, $key);
+}
+
+@function app-color($key: 'secondary') {
+    @return map-get($app-colors, $key);
+}
+
+@function app-color($key: 'text') {
+    @return map-get($app-colors, $key);
+}
+
+@function app-color($key: 'foreground') {
+    @return map-get($app-colors, $key);
+}
+
+@function app-color($key: 'background') {
+    @return map-get($app-colors, $key);
+}

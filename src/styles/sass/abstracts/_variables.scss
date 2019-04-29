@@ -1,0 +1,44 @@
+
+/* App Colors */
+// primary color pallete https://mycolor.space/?hex=%230074E4&sub=1
+$app-colors: (
+    'primary': #0074e4,
+    'secondary': #28C195,
+    'text': #333,
+    'foreground': #fff,
+    'background': #000,    
+);
+
+$color-primary: app-color('primary');
+$color-primary-light: mix(white, $color-primary, 20%);
+$color-primary-dark: mix(black, $color-primary, 20%);
+//$color-primary-light: #2B95FC;
+//$color-primary-dark: #004281;
+
+$color-secondary: app-color('secondary');
+$color-secondary-light: mix(white, $color-secondary, 20%);
+$color-secondary-dark: mix(black, $color-secondary, 20%);
+// $color-secondary-light: #6FFACB;
+// $color-secondary-dark: #008A62;
+
+$color-grey-light-1: #eeeeee;
+$color-grey-light-2: #dddddd;
+$color-grey-light-3: #cccccc;
+
+$color-grey-dark-1: #888888;
+$color-grey-dark-2: #777777;
+$color-grey-dark-3: #666666;
+
+$color-text: #333;
+$color-text-light: #666;
+
+$color-white: #fff;
+$color-black: #000;
+
+
+/* Button variables */
+$color-button-delete: #d1495b; 
+$color-button-action: pink;
+
+$button-padding: .8rem;
+$button-font-size: 1.6rem;

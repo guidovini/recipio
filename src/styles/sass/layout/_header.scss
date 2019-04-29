@@ -1,0 +1,21 @@
+/* Header */
+
+.header {
+    background: $color-primary;
+    color: $color-white;
+    padding: 1.6rem 0;
+}
+  
+.header__title {
+    font-size: 3.2rem;
+    margin-bottom: .4rem;
+
+    @include respond(tab-port) { 
+        font-weight: 300;
+    } 
+}
+  
+.header__subtitle {
+    font-size: 1.6rem;
+    font-weight: 300;
+}

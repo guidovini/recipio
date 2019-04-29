@@ -1,0 +1,28 @@
+
+%title {
+   @include respond(tab-port) { 
+        font-weight: 300;
+      } 
+}
+
+.recipes__title {
+    @extend %title;
+}
+
+.steps__title {
+    @extend %title;
+}
+
+.ingredients__title {
+    @extend %title;
+}
+
+.recipe-item__title {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+
+    @include respond(tab-port) { 
+        font-weight: 300;
+    } 
+
+}

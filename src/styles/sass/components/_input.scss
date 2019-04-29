@@ -1,0 +1,136 @@
+
+/* Inputs */
+
+.search-input {
+    flex: 1 1;
+
+    border: 1px solid $color-grey-light-2;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: 3rem;
+    margin-right: .8rem;
+    padding: .4rem .8rem;
+
+    @include respond(phone) { 
+        flex: 1 1 100%;
+        margin-right: 0rem;
+        margin-bottom: .5rem;
+    } 
+}
+  
+.dropdown {
+    flex: 1 1;
+    background: $color-white;
+    color: $color-text-light;  
+
+    border: 1px solid $color-grey-light-2;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 400;
+    height: 3rem;
+    margin-right: .8rem;
+    padding: .5rem;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+
+    @include respond(phone) { 
+        margin: .5rem 0;
+        align-self: center;
+    } 
+
+    @include respond(phone) { 
+        &:last-child {
+            margin: 0;
+        }
+    } 
+}
+
+.checkbox > input {
+    margin-right: .4rem;
+}
+  
+
+/* Recipe Inputs */
+
+%item-field {
+    flex: 1;
+
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 300;
+    border: none;
+    margin: 0 1rem; 
+    padding: .8rem;
+
+    &:focus {
+        border: 1px solid $color-primary;
+        cursor: text;
+        font-style: italic;
+        font-weight: inherit;
+        
+        &:hover {
+            cursor: text;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.title-field {
+    @extend %item-field;
+
+    color: $color-text;
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 1.5rem 0 0 0;
+    width: 100%;
+    padding-left: 0;
+
+    @include respond(phone) { 
+        padding: 0;
+        margin: 0;
+    } 
+
+    &:hover {
+        background-color: #f2f2f2;
+    }
+}
+
+.add-item {
+    display: flex;
+
+    @include respond(phone) { 
+        align-content: stretch;
+    } 
+    
+}
+
+.new-input {  // For steps and ingredients
+    @extend %item-field;
+
+    flex: 1;
+    width: 100%;
+    margin: 0;
+    border: 1px solid $color-grey-light-2;
+}
+
+.step-field {
+    @extend %item-field;
+}
+
+.ingredient-field {
+    @extend %item-field;
+}
+

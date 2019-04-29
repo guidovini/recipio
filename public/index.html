@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i" rel="stylesheet">
+        <link href="/scripts/index.css" rel="stylesheet">
+
+        <title>Recipio - Manage and Customize your Recipes</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">Recipes App | Dashboard</h1>
+                <h2 class="header__subtitle">Manage your recipes!</h2>
+            </div>
+        </header>
+
+        <div class="actions"> 
+            <div class="actions__container">
+                <input type="text" id="search-box" class="search-input" placeholder="Search you recipes">
+
+                <select id="filter-by" class="dropdown">
+                    <option value="byEdited" selected>Sort by last edited</option>
+                    <option value="byCreated">Sort by recently created</option>
+                    <option value="alphabetically">Sort alphabetically</option>
+                </select>        
+                
+                <select id="filter-status" class="dropdown">
+                    <option id="filter-status-all" value="byAll" selected>Show all recipes</option>
+                    <option id="filter-status-fav" value="byFavorited">Show favorite recipes</option>
+                    <option id="filter-status-archived" value="byArchived">Show archived recipes</option>
+                </select>   
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-item">
+                <h2 class="recipes__title">Your recipes: </h2>
+                <div id="recipes-container"></div>
+                <button id="add-recipe" class="button--primary">Add Recipe</button>
+            </div>
+        </div>
+
+        <script src="/scripts/index-bundle.js"></script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+
+%button { // Use extend to layout the component
+    padding: $button-padding;
+    font-size: $button-font-size;
+    font-weight: 300;
+    border: none;
+    border-radius: none; 
+    border-bottom: 2px solid $color-primary-dark;
+
+    transition: background .3s ease;
+
+    @include respond(small-screen) { margin: .25rem 0; } 
+}
+
+%button--delete {
+    display: flex;
+    justify-content: center;
+
+    padding: .8rem;
+    font-size: 1.6rem;
+    border: none;
+
+    min-width: 3rem;
+    min-height: 3rem; 
+
+    transition: background .3s ease;
+
+    @include respond(small-screen) { margin: .25rem 0; } 
+}
+
+.button {
+    &--primary {
+        @extend %button;
+        @include button-style($color-primary, $color-primary-dark); 
+    }
+
+    &--secondary {
+        @extend %button;
+        @include button-style($color-grey-dark-1, $color-grey-dark-3);
+    }
+
+    &--home {
+        @extend %button;
+        @include button-style($color-secondary, $color-secondary-dark);
+
+        @include respond(phone) { 
+            flex: 1 1 50%;
+            margin-bottom: .5rem;
+        } 
+    }
+
+    &--delete {
+        @extend %button--delete;
+        @include button-delete-style($color-grey-light-1, $color-grey-dark-1);
+
+        @include respond(phone) { 
+            flex: 1 1 50%;
+            margin-bottom: .5rem;
+            background-color: $color-grey-light-2;
+        } 
+    }
+
+    &--delete-small {
+        @extend %button--delete;
+        @include button-delete-style($color-grey-light-1, $color-grey-dark-1);
+
+        &--home {
+            @extend %button--delete;
+            align-self: flex-start;
+        }
+    }
+}

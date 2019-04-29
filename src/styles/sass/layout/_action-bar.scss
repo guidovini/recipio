@@ -1,0 +1,27 @@
+/* Action Bar */
+
+.actions {
+    background-color: $color-grey-light-1;
+    border-bottom: 1px solid $color-grey-light-2;
+    padding: .8rem;
+
+    @include respond(phone) { 
+        padding: .8rem 2rem;
+    } 
+}
+  
+.actions__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    max-width: 60rem;
+    min-height: 3rem;
+
+    @include respond(phone) { 
+        max-width: none;
+        justify-content: space-around;
+    } 
+}

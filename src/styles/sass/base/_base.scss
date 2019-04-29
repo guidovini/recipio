@@ -1,0 +1,69 @@
+
+/* Base Styles */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+    
+  @include respond(big-desktop) { // width > 1200
+      font-size: 75%; // 1rem = 12px, 12/16 = 75%
+  }
+
+  @include respond(tab-land) { // width < 1200?
+      font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) { // width < 900?
+      font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+}
+
+body {
+  box-sizing: border-box;
+
+  color: $color-text;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Others */
+
+.container {
+  margin: 0 auto;
+  max-width: 60rem;
+  
+  &:nth-last-child(2) {
+    padding-bottom: 1rem;
+  }
+
+  @include respond(phone) { 
+    max-width: none;
+    padding: 1rem 2rem;
+  } 
+}
+
+.container-item {
+  padding: 1rem 0;
+}
+
+.empty-message {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  color: $color-text-light;
+  font-style: italic;
+  background-color: $color-grey-light-1;
+}
+

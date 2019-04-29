@@ -1,0 +1,75 @@
+
+/* Recipe List Item */
+
+
+
+%list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 1.6rem 0;
+    background: $color-grey-light-1;
+    border: 1px solid $color-grey-light-2;
+}
+
+.recipe-item {
+    @extend %list-item;
+    box-shadow: 0 .2rem .5rem rgba($color-black, .15);
+}
+
+.recipe-item__link {
+    flex: 1;
+
+    border-right: 1px solid $color-grey-light-2;
+
+    color: #333333;
+    padding: 1.6rem;
+
+    text-decoration: none;    
+    transition: background .3s ease;
+
+    @include respond(small-screen) { 
+        padding: 1rem;
+    } 
+
+    &:hover {
+        background: $color-grey-light-2;
+    }
+
+}
+
+.recipe-item__description {
+    color: #666;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: .5rem
+}
+
+.recipe-item__status {
+    color: #666;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.step-item {
+    @extend %list-item;
+
+    padding: 1.6rem;
+
+    @include respond(small-screen) { 
+        padding: 1rem;
+    } 
+}
+
+.ingredient-item {
+    @extend %list-item;
+
+    padding: 1.6rem;
+
+    @include respond(small-screen) { 
+        padding: 1rem;
+    } 
+}

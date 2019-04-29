@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i" rel="stylesheet">
+        <link href="/scripts/edit.css" rel="stylesheet">
+
+        <title id="edit-title">Manage and Customize your Recipes with Recipio</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">Recipes App | Dashboard</h1>
+                <h2 class="header__subtitle">Edit your recipes!</h2>
+            </div>
+        </header>
+
+        <div class="actions">
+            <div class="actions__container">
+                <button id="home-button" class="button--home">Home</button>
+                <button id="recipe-delete" class="button--delete">Delete Recipe</button>
+                <label class="checkbox">
+                    <input id="recipe-fav" type="checkbox"> Favorite Recipe
+                </label>
+                <label class="checkbox">
+                    <input id="recipe-archive" type="checkbox"> Archive Recipe
+                </label>
+            </div>
+        </div>
+        
+        <div class="container">
+            <input type="text" id="recipe-title" class="title-field" placeholder="Give this recipe a name!">
+
+            <div class="container-item">
+                <h2 class="steps__title">Steps</h2>
+                <div id="recipe-steps" class="steps-container"></div>
+                <form id="recipe-new-step" class="add-item">
+                    <input class="new-input" name="newStepInput" placeholder="Add new step" type="text"> 
+                    <button class="button button--secondary">Add step</button>
+                </form>
+            </div>
+
+            <div class="container-item">
+                <h2 class="ingredients__title">Ingredients</h2>
+                <div id="recipe-ingredients" class="ingredients-container"></div>
+                <form id="recipe-new-ingredient" class="add-item">
+                    <input class="new-input" name="newIngredientInput" placeholder="Add new ingredient" type="text">
+                    <button class="button button--secondary">Add ingredient</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="/scripts/edit-bundle.js"></script>
+    </body>
+</html>
