@@ -14,7 +14,7 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.0.1",
+    "autoprefixer": "^9.6.1",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
